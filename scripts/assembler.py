@@ -204,17 +204,19 @@ for line in assm16_code:
 							output = output + (bin(loop_loc[syntax[1]])[2:]).zfill(16)[-13:]
 						else:
 							print("ERROR:OP = ",length," Invalid Jump, program may get unstable ",syntax[0]," at line: ",line_count+1)
+							sys.exit(0)
 
 					else:
 					#	print (syntax[1])
 					#	print (line_count)
 					#	print(loop_loc[syntax[1]])
-					#	print(loop_loc[syntax[1]] - line_count)
+					#	print("************************************",loop_loc[syntax[1]] - line_count)
 					#	print(bin(((1 << 16) -1) & (loop_loc[syntax[1]] - line_count)))
 						if(abs(loop_loc[syntax[1]] - line_count) < 2048):
 							output = output + (bin(((1 << 16) -1) & (loop_loc[syntax[1]] - line_count))[-11:])
 						else:
 							print("ERROR:OP = ",length," Invalid Branch, exceeds the max value, program may get unstable ",syntax[0]," at line: ",line_count+1)
+							sys.exit(0)
 
 				else:
 					print("ERROR:OP = ",length," Incorrect Opcode type for 2 level syntax ",syntax[0]," used at line: ",line_count+1)	
