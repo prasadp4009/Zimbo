@@ -32,8 +32,8 @@ module datapath(
 localparam	R0 = 4'd0;
 
 assign pcin 	= pcout + 16'd2;
-assign pcjump 	= {pcin[15:14],{rmdata[12:0],1'b0}};
-assign pcbranch = pcin + extdata;
+assign pcjump 	= {pcout[15:14],{rmdata[12:0],1'b0}};
+assign pcbranch = pcout + extdata;
 assign wrfdata	= mem_alu ? rwdata : result;
 //assign addr1	= addrbase ? rmdata[6:3] : R0;
 assign addr2	= {rmdata[10:8],mulreg};

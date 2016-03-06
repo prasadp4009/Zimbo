@@ -38,8 +38,9 @@ localparam	PAS1	= 3'b001,
 		SIMM	= 3'b010;
 
 localparam	NOP	= 5'b00000,
-		HLT	= 5'b111xx,
+		HLT	= 5'b11111,
 		
+		LDA	= 5'b00010,	//Load at Address directly
 		LDD	= 5'b00011,
 		LDR	= 5'b00100,
 		LDM	= 5'b00101,
@@ -149,6 +150,10 @@ begin
 	casex(new_opcode)
 		NOP: update = {EPC,INS,MRD,RRF,IMM,NJP,NBR,PSA,SIM,RGA,CY1,PAS1,FUN1};
 		HLT: update = {DPC,INS,MRD,RRF,IMM,NJP,NBR,PSA,SIM,RGA,CY1,PAS1,FUN1};
+		LDA: case(cycle)
+			CY1: update = {DPC,INS,MRD,RRF,OFF,NJP,NBR,PSA,SIM,RGA,CY2,PAS1,FUN1};
+			CY2: update = {EPC,DAT,MRD,WRF,OFF,NJP,NBR,PSM,SIM,RGA,CY1,PAS1,FUN1};
+		     endcase
 		LDD: case(cycle)
 			CY1: update = {EPC,INS,MRD,RRF,OFF,NJP,NBR,PSA,SIM,RGA,CY2,AOFF,FUN1};
 			CY2: update = {EPC,INS,MRD,WRF,OFF,NJP,NBR,PSM,SIM,RGA,CY1,AOFF,FUN1};
@@ -179,7 +184,7 @@ begin
 					CY1: update = {DPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY2,OPR,FUN1};
 					CY2: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};
 				  endcase
-			1'b1	: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN2};
+			1'b1	: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN2};		//MOD
 		     endcase
 		AND: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};
 		ORR: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};
