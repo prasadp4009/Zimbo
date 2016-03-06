@@ -18,7 +18,7 @@ LDM	,R12, #1
 LDM	,R13, #2
 LDM	,R14, #3
 
-LDI	,R16, #7
+LDI	,R15, #7
 
 LDD	,R0,=Pointer
 LDM	,R1, #1  
@@ -52,7 +52,7 @@ LDR	,R13,R9
 LDR	,R14,R10
 
 ADI	,R0, #12
-SUB	,R16,#1
+SUB	,R15,#1
 BPV	,LOOP
 
 LDM	,R1, #0
@@ -77,12 +77,13 @@ STR	,R12, #1
 STR	,R13, #2
 STR	,R14, #3
 
-ADI	,R17, #8
+ADI	,R15, #8
 LDD	,R0,=Pointer
 STR	,R1, #2
 LDD	,R1, #0
 ADI	,R1, #8
 STR	,R1, #0
+JMP	,LOOP
 
 
 .data

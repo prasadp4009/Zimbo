@@ -3,6 +3,7 @@
 import sys
 import re
 import pprint
+import string
 
 print ("Welcome to Zimbo Assembler")
 str = input("Enter file name: ");
@@ -148,18 +149,14 @@ if not error:
 #		for linenum in loop_loc[val]:
 #			print("\t\tLine number = ",linenum)
 
-sys.exit(0)
-
 assm16_code = code + data
 
 line_count = 0
-for line in assm16_code:
-		line_count += 1 
+for line in assm16_code: 
 		syntax = line.split(',')
 		length = len(syntax)
-		if((length < 1) or (length > 3)):
-			print("ERROR: Invalid Entry",syntax,"at line",line_count)
-			sys.exit(0)
+		print(syntax," ",len(syntax))
+
 		if(length == 3):
 			if ":" in syntax[0]:
 				strip_opcode = syntax[0].split(':')[1]
@@ -168,12 +165,12 @@ for line in assm16_code:
 			if decode_op.get(strip_opcode) is not None:
 				output = decode_op.get(strip_opcode)
 			else:
-				print("ERROR: Invalid Opcode ",syntax[0]," at line:",line_count)
+				print("ERROR: Invalid Opcode ",syntax[0]," at line: ",line_count+1)
 				sys.exit(0)
 			if decode_reg.get(syntax[1]) is not None:
 				output = output + decode_reg.get(syntax[1])
 			else:
-				print("ERROR: Invalid Register ",syntax[1]," at line:",line_count)
+				print("ERROR:OP = ",length," Invalid Register ",syntax[1]," at line: ",line_count+1)
 				sys.exit(0)
 
 			if "#" in syntax[2]:
@@ -185,29 +182,79 @@ for line in assm16_code:
 				else:
 					output = output + decode_reg.get(syntax[2]) + "000"
 			else:
-				print("ERROR: Invalid Entry ",syntax[2]," at line:",line_count)
+				print("ERROR:OP = ",length," Invalid Entry ",syntax[2]," at line: ",line_count+1)
 				sys.exit(0)
 		elif(length == 2):
 			if ":" in syntax[0]:
 				strip_opcode = syntax[0].split(':')[1]
 			else:
 				strip_opcode = syntax[0]
-			if decode_op.get(strip_opcode) is not None:
+			if (decode_op.get(strip_opcode) is not None) and (loop_loc[syntax[1]] is not None):
 				if (strip_opcode in ["JMP","BZR","BEQ","BPV","BNG"]):
 					output = decode_op.get(strip_opcode)
+					if(strip_opcode == "JMP"):
+					#	print("**********************JUMP*******************")
+					#	print (syntax[1])
+					#	print (line_count)
+					#	print(loop_loc[syntax[1]])
+					#	print(bin(loop_loc[syntax[1]]))
+						temp1 = (bin(loop_loc[syntax[1]])[2:]).zfill(16)
+						temp2 = (bin(line_count)[2:]).zfill(16)
+						if(temp1[:2] == temp2[:2]):
+							output = output + (bin(loop_loc[syntax[1]])[2:]).zfill(16)[-13:]
+						else:
+							print("ERROR:OP = ",length," Invalid Jump, program may get unstable ",syntax[0]," at line: ",line_count+1)
+
+					else:
+					#	print (syntax[1])
+					#	print (line_count)
+					#	print(loop_loc[syntax[1]])
+					#	print(loop_loc[syntax[1]] - line_count)
+					#	print(bin(((1 << 16) -1) & (loop_loc[syntax[1]] - line_count)))
+						if(abs(loop_loc[syntax[1]] - line_count) < 2048):
+							output = output + (bin(((1 << 16) -1) & (loop_loc[syntax[1]] - line_count))[-11:])
+						else:
+							print("ERROR:OP = ",length," Invalid Branch, exceeds the max value, program may get unstable ",syntax[0]," at line: ",line_count+1)
+
 				else:
-					print("ERROR: Incorrect Opcode type for 2 level syntax ",syntax[0]," used at line:",line_count)	
+					print("ERROR:OP = ",length," Incorrect Opcode type for 2 level syntax ",syntax[0]," used at line: ",line_count+1)	
 					sys.exit(0)
 			else:
-				print("ERROR: Invalid Opcode ",syntax[0]," at line:",line_count)
+				print("ERROR:OP = ",length," Invalid Opcode/Loop variable ",syntax[0]," at line: ",line_count+1)
 				sys.exit(0)
-		#	if
+		elif(length == 1):
+			if (":" in syntax[0]) and ("x" in syntax[0]):
+				hexdat = syntax[0][-4:]
+				if all(c in string.hexdigits for c in hexdat):
+					output =  (bin(int(hexdat, 16))[2:]).zfill(16)
+				else:
+					print("Error:OP = ",length,"(1) Invalid Hex digit ", hexdat," at line: ",line_count + 1)
+					sys.exit(0)
+			elif "x" in syntax[0] and syntax[0][:2] == "0x":
+				hexdat = syntax[0].split('x')[1]
+				if all(c in string.hexdigits for c in hexdat):
+					output =  (bin(int(hexdat, 16))[2:]).zfill(16)
+				else:
+					print("Error:OP = ",length,"(2) Invalid Hex digit ", hexdat," at line: ",line_count + 1)
+					sys.exit(0)
+			elif data_loc[syntax[0]] is not None:
+				output =  (bin(data_loc[syntax[0]])[2:]).zfill(16)
+			else:
+				print("Error:OP = ",length," Invalid data or pointer value",syntax[0]," at line: ",line_count + 1)
+		else:
+			print("ERROR:OP = ",length," Invalid Entry",syntax,"at line",line_count + 1)
+			sys.exit(0)
+		bin16_code.insert(line_count,output) 
+		line_count += 1
 
+print ("\n\nLength of generated binary is: ",line_count)
+print ("\n\n\n\n******** Done with code parsing...!!!!!!!! ***********")
 
-				
-
-
-
+print ("\n\n****** Generated Binaries *******\n\n")
+line_count = 0
+for val in bin16_code:
+	print("Line_count: ",line_count," Value: ",val)
+	line_count += 1
 
 #for val in code:
 #	print (val,"\t\tAddress = ","{0:#0{1}x}".format(code.index(val)*2,6))
