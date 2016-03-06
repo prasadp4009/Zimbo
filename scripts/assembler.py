@@ -6,12 +6,12 @@ import pprint
 import string
 
 print ("Welcome to Zimbo Assembler")
-str = input("Enter file name: ");
-print ("Received input is : ", str)
+file_name = input("Enter file name: ");
+print ("Received input is : ", file_name)
 try:
-    file = open(str,'r')
+    file = open(file_name,'r')
 except FileNotFoundError:
-    print ("ERROR: There was error in reading file ", str)
+    print ("ERROR: There was error in reading file ", file_name)
     sys.exit(0)
 
 codefound = False
@@ -74,7 +74,7 @@ for line in file.readlines():
 			pc_count[line.rstrip('\n')] = pc
 			pc += 2
 		elif not((any(rg in line.strip() for rg in registers) and any(op in line.strip() for op in opcode)) or (line.strip()=="")):
-			print ("Invalid Opcode or Register Value")
+			print ("ERROR: Invalid Opcode or Register Value")
 			print ("Line: ",line)
 			error = True
 			break
@@ -120,6 +120,7 @@ for line in file.readlines():
 			#data.append(line.rstrip('\n'))
 file.close()
 
+'''
 if line_count == (len(code) + len(data)):
 	print("Values are perfect")
 	print("Line count = ",line_count,"\nCode count = ",len(code),"\nData count = ",len(data),"\nCode + Data = ",len(code)+len(data))
@@ -148,14 +149,14 @@ if not error:
 #		print ("\t",val," at line:")
 #		for linenum in loop_loc[val]:
 #			print("\t\tLine number = ",linenum)
-
+'''
 assm16_code = code + data
 
 line_count = 0
 for line in assm16_code: 
 		syntax = line.split(',')
 		length = len(syntax)
-		print(syntax," ",len(syntax))
+	#	print(syntax," ",len(syntax))
 
 		if(length == 3):
 			if ":" in syntax[0]:
@@ -248,15 +249,73 @@ for line in assm16_code:
 			sys.exit(0)
 		bin16_code.insert(line_count,output) 
 		line_count += 1
-
+'''
 print ("\n\nLength of generated binary is: ",line_count)
 print ("\n\n\n\n******** Done with code parsing...!!!!!!!! ***********")
 
 print ("\n\n****** Generated Binaries *******\n\n")
+'''
 line_count = 0
+hiLO = False
+hexl = ""
+hexh = ""
+
+file_name = file_name.split('.')[0]
+
+hex_filename = file_name + "_32hex.dat"
+byte_filename = file_name + "_8bin.dat"
+bin_filename = file_name + "_bin.hex"
+try:
+    hex32_file = open(hex_filename, 'w')
+except FileExistsError:
+    print ("ERROR: File already exists ", hex_filename)
+    sys.exit(0)
+
+try:
+    byte_file  = open(byte_filename, 'w')
+except FileExistsError:
+    print ("ERROR: File already exists ", byte_filename)
+    sys.exit(0)
+
+try:
+    bin_file   = open(bin_filename, 'wb')
+except FileExistsError:
+    print ("ERROR: File already exists ", bin_filename)
+    sys.exit(0)
+
 for val in bin16_code:
 	print("Line_count: ",line_count," Value: ",val)
 	line_count += 1
+	if hiLO:
+		hexh = str(hex(int(val,2))[2:].zfill(4)) + hexl + "\n"
+		hex32_file.write(hexh)
+		hiLO = False
+		print("In High")
+	else:
+		hexl = str(hex(int(val,2))[2:].zfill(4))
+		hiLO = True
+
+	byte_file.write(val[-8:])
+	byte_file.write("\n")
+	byte_file.write(val[:8])
+	byte_file.write("\n")
+	byte_file.write("\n")
+
+	byte_array = [int(val[-8:],2),int(val[:8],2)]
+	bin_file.write(bytes(byte_array))
+#	bin_file.write(str(int(val[:7],2)))
+#	bin_file.write(str(int(val[8:],2)))
+
+hex32_file.close()
+byte_file.close()
+bin_file.close()
+print ("+_+_+_+_+_All Operations are Completed_+_+_+_+_+")
+
+
+
+	
+
+
 
 #for val in code:
 #	print (val,"\t\tAddress = ","{0:#0{1}x}".format(code.index(val)*2,6))
