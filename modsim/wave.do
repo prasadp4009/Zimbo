@@ -49,10 +49,22 @@ add wave -noupdate -radix unsigned /zimbotb/zimboinst/pcinst/pc2
 add wave -noupdate -radix binary /zimbotb/zimboinst/controlinst/update
 add wave -noupdate /zimbotb/zimboinst/controlinst/new_opcode
 add wave -noupdate /zimbotb/zimboinst/controlinst/opcode_latch
+add wave -noupdate /zimbotb/zimboinst/aluinst/mulreg
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/mul
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/mul_latch
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/mod_latch
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/mod_temp
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/modSub
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/resultc
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/modHLsubsel
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/notmodzeroH
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/notmodzeroL
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/notmodzero
+add wave -noupdate -radix unsigned /zimbotb/zimboinst/aluinst/modHGTmodL
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {239400 ps} 0}
+WaveRestoreCursors {{Cursor 1} {17900 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 150
+configure wave -namecolwidth 148
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
@@ -66,4 +78,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {197 ns} {325600 ps}
+WaveRestoreZoom {17900 ps} {146700 ps}

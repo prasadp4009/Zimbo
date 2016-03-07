@@ -4,6 +4,15 @@ import sys
 import re
 import pprint
 import string
+import os, errno
+
+def silentremove(filename):
+	try:
+		os.remove(filename)
+		print("Removed existing file: ",filename)
+	except OSError as e: # this would be "except OSError, e:" before Python 2.6
+		if e.errno != errno.ENOENT: # errno.ENOENT = no such file or directory
+			raise # re-raise exception if a different error occured
 
 print ("Welcome to Zimbo Assembler")
 file_name = input("Enter file name: ");
@@ -240,8 +249,15 @@ for line in assm16_code:
 				else:
 					print("Error:OP = ",length,"(2) Invalid Hex digit ", hexdat," at line: ",line_count + 1)
 					sys.exit(0)
-			elif data_loc[syntax[0]] is not None:
-				output =  (bin(data_loc[syntax[0]])[2:]).zfill(16)
+			elif syntax[0] != "HLT":
+				if data_loc[syntax[0]] is not None:
+					output =  (bin(data_loc[syntax[0]])[2:]).zfill(16)
+				else:
+					print("Error:OP = ",length,"(2) Invalid Data Location ", syntax[0]," at line: ",line_count + 1)
+					sys.exit(0)
+
+			elif syntax[0] == "HLT" and decode_op[syntax[0]] is not None:
+				output =  decode_op.get(syntax[0]) + "00000000000"
 			else:
 				print("Error:OP = ",length," Invalid data or pointer value",syntax[0]," at line: ",line_count + 1)
 		else:
@@ -260,11 +276,19 @@ hiLO = False
 hexl = ""
 hexh = ""
 
+
 file_name = file_name.split('.')[0]
+
+
 
 hex_filename = file_name + "_32hex.dat"
 byte_filename = file_name + "_8bin.dat"
 bin_filename = file_name + "_bin.hex"
+
+silentremove(hex_filename)
+silentremove(byte_filename)
+silentremove(bin_filename)
+
 try:
     hex32_file = open(hex_filename, 'w')
 except FileExistsError:
@@ -284,8 +308,8 @@ except FileExistsError:
     sys.exit(0)
 
 for val in bin16_code:
-	print("Line_count: ",line_count," Value: ",hex(int(val,2))[2:].zfill(4))
-	line_count += 1
+#	print("Line_count: ",line_count," Value: ",hex(int(val,2))[2:].zfill(4))
+#	line_count += 1
 	if hiLO:
 		hexh = str(hex(int(val,2))[2:].zfill(4)) + hexl + "\n"
 		hex32_file.write(hexh)

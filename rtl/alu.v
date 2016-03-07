@@ -26,14 +26,29 @@ localparam	ADD = 3'b000,
 
 wire[31:0] mul;	
 reg [31:0] mul_latch;
-
+reg [15:0] mod_latch;
+wire[15:0] mod_temp;
+wire[15:0] modSub;
 reg [16:0] resultc;
+wire[15:0] modHLsubsel;
+
+wire notmodzeroH;
+wire notmodzeroL;
+wire notmodzero;
+wire modHGTmodL;
 
 assign mul = var1 * var2;
 
 assign result = resultc[15:0];
 assign sign = resultc[16];
 assign zero = ~|resultc[15:0];
+assign mod_temp = notmodzero ? modSub : (16'hFFFF - modHLsubsel);
+assign notmodzeroH = |var1;
+assign notmodzeroL = |var2;
+assign notmodzero  = notmodzeroH & notmodzeroL; 
+assign modHGTmodL  = mul[31:16] > mul[15:0];
+assign modSub      = mul[15:0] - mul[31:16];
+assign modHLsubsel = notmodzeroL ? var2 : var1;
 
 always@(*)
 begin
@@ -47,8 +62,8 @@ begin
 							1'b0: resultc[15:0] = mulreg ? mul[31:16] : mul[15:0];
 							1'b1: resultc[15:0] = mulreg ? mul_latch[31:16] : mul_latch[15:0];
 						endcase
-				1'b1	:	resultc[15:0] = (mul[31:16] > mul[15:0]) ? 
-							       (mul[15:0] - mul[31:16] + 16'd1) : (mul[15:0] - mul[31:16]);
+				1'b1	:	resultc[15:0] = notmodzero ? (modHGTmodL ? mod_latch : modSub) 
+									   : (mod_latch + 16'd1);
 				default	:	resultc = 17'd0;
 			  endcase
 		AND	: resultc[15:0] = var1 & var2;
@@ -61,6 +76,7 @@ end
 always@(posedge clock)
 begin
 	mul_latch <= mul;
+	mod_latch <= mod_temp + 16'd1;
 end
 
 endmodule

@@ -121,7 +121,7 @@ assign memrd_en = ~memwr_en;
 assign OPR = opcode[2:0];
 assign FUN = func[0];
 assign new_opcode = cycle ? opcode_latch : opcode;
-assign mulreg = (new_opcode == MUL) ? (cycle ? (~rdestBit0) : rdestBit0) : rdestBit0; 
+assign mulreg = (new_opcode == MUL) & (~FUN) ? (cycle ? (~rdestBit0) : rdestBit0) : rdestBit0; 
 assign {pc_en,insdat,memwr_en,regwr_en,immoff,jump,branch,mem_alu,alusrc,addrbase,num_of_cycles,aluopr,alufunc} = update;
 
 always@(posedge clock or negedge reset_n)
@@ -184,7 +184,10 @@ begin
 					CY1: update = {DPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY2,OPR,FUN1};
 					CY2: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};
 				  endcase
-			1'b1	: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN2};		//MOD
+			1'b1	: case(cycle)
+					CY1: update = {DPC,INS,MRD,RRF,IMM,NJP,NBR,PSA,SRG,RGA,CY2,OPR,FUN2};		//MOD
+					CY2: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN2};
+				  endcase
 		     endcase
 		AND: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};
 		ORR: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SRG,RGA,CY1,OPR,FUN1};

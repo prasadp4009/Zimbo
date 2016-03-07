@@ -15,7 +15,7 @@ wire [15:0] addr0;
 wire [15:0] addr1;
 
 reg [15:0] rlatch;
-reg [7:0] mem [0:65536];
+reg [7:0] mem [0:65535];
 
 assign addr0 = addrm;
 assign addr1 = {addrm[15:1],1'b1};
@@ -25,7 +25,7 @@ assign	rwdata = {mem[addr1],mem[addr0]};
 
 initial
 begin
-	$readmemb("F:/program.txt", mem);
+	$readmemb("../scripts/program_8bin.dat", mem);
 end
 
 always@(posedge clock)
