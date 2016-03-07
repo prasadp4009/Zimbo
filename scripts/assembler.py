@@ -98,7 +98,7 @@ for line in file.readlines():
 			else:
 				values = [line_temp]
 			length = len(values)
-			data_loc[point] = line_count
+			data_loc[point] = line_count * 2
 			#print ("*************************************")
 			#print (values)
 			#print (depth)
@@ -159,13 +159,14 @@ if not error:
 #		for linenum in loop_loc[val]:
 #			print("\t\tLine number = ",linenum)
 '''
+print(data_loc)
 assm16_code = code + data
 
 line_count = 0
 for line in assm16_code: 
 		syntax = line.split(',')
 		length = len(syntax)
-	#	print(syntax," ",len(syntax))
+		print(line_count*2,": ",syntax)
 
 		if(length == 3):
 			if ":" in syntax[0]:
@@ -282,10 +283,12 @@ file_name = file_name.split('.')[0]
 
 
 hex_filename = file_name + "_32hex.dat"
+hex8_filename = file_name + "_8hex.dat"
 byte_filename = file_name + "_8bin.dat"
 bin_filename = file_name + "_bin.hex"
 
 silentremove(hex_filename)
+silentremove(hex8_filename)
 silentremove(byte_filename)
 silentremove(bin_filename)
 
@@ -293,6 +296,12 @@ try:
     hex32_file = open(hex_filename, 'w')
 except FileExistsError:
     print ("ERROR: File already exists ", hex_filename)
+    sys.exit(0)
+
+try:
+    hex8_file = open(hex8_filename, 'w')
+except FileExistsError:
+    print ("ERROR: File already exists ", hex8_filename)
     sys.exit(0)
 
 try:
@@ -322,11 +331,15 @@ for val in bin16_code:
 		hiLO = True
 
 #	bin_file.write(hex(int(val,2))[2:].zfill(4))
+	hex8_file.write(str(hex(int(val[-8:],2))[2:].zfill(2)))
+	hex8_file.write("\n")
+	hex8_file.write(str(hex(int(val[:8],2))[2:].zfill(2)))
+	hex8_file.write("\n")
 	byte_file.write(val[-8:])
 	byte_file.write("\n")
 	byte_file.write(val[:8])
 	byte_file.write("\n")
-	byte_file.write("\n")
+#	byte_file.write("\n")
 
 	byte_array = [int(val[-8:], 2),int(val[:8], 2)]
 	bin_file.write(bytes(byte_array))
@@ -336,6 +349,7 @@ for val in bin16_code:
 #	bin_file.write(str(int(val[8:],2)))
 
 hex32_file.close()
+hex8_file.close()
 byte_file.close()
 bin_file.close()
 print ("+_+_+_+_+_All Operations are Completed_+_+_+_+_+")

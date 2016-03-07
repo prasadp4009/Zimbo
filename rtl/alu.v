@@ -29,18 +29,18 @@ reg [31:0] mul_latch;
 reg [15:0] mod_latch;
 wire[15:0] mod_temp;
 wire[15:0] modSub;
-reg [16:0] resultc;
+reg [15:0] resultc;
 wire[15:0] modHLsubsel;
 
 wire notmodzeroH;
 wire notmodzeroL;
 wire notmodzero;
 wire modHGTmodL;
-
+reg  signbit;
 assign mul = var1 * var2;
 
 assign result = resultc[15:0];
-assign sign = resultc[16];
+assign sign = signbit;
 assign zero = ~|resultc[15:0];
 assign mod_temp = notmodzero ? modSub : (16'hFFFF - modHLsubsel);
 assign notmodzeroH = |var1;
@@ -53,23 +53,23 @@ assign modHLsubsel = notmodzeroL ? var2 : var1;
 always@(*)
 begin
 	case(opr)
-		ADD	: resultc = {1'b0, var1} + {1'b0, var2};
-		PAS1	: resultc[15:0] = var1;
-		SUB	: resultc = {1'b0, var1} - {1'b0, var2};
-		PAS2	: resultc[15:0] = var2;
+		ADD	: {signbit,resultc} = {1'b0, var1} + {1'b0, var2};
+		PAS1	: resultc = var1;
+		SUB	: {signbit,resultc} = {1'b0, var1} - {1'b0, var2};
+		PAS2	: resultc = var2;
 		MLT	: case(func[0])
 				1'b0	:	case(cycle)
-							1'b0: resultc[15:0] = mulreg ? mul[31:16] : mul[15:0];
-							1'b1: resultc[15:0] = mulreg ? mul_latch[31:16] : mul_latch[15:0];
+							1'b0: resultc = mulreg ? mul[31:16] : mul[15:0];
+							1'b1: resultc = mulreg ? mul_latch[31:16] : mul_latch[15:0];
 						endcase
-				1'b1	:	resultc[15:0] = notmodzero ? (modHGTmodL ? mod_latch : modSub) 
+				1'b1	:	resultc = notmodzero ? (modHGTmodL ? mod_latch : modSub) 
 									   : (mod_latch + 16'd1);
-				default	:	resultc = 17'd0;
+				default	:	resultc = 16'd0;
 			  endcase
-		AND	: resultc[15:0] = var1 & var2;
-		OR	: resultc[15:0] = var1 | var2;
-		XOR	: resultc[15:0] = var1 ^ var2;
-		default	: resultc	= 17'd0;
+		AND	: resultc = var1 & var2;
+		OR	: resultc = var1 | var2;
+		XOR	: resultc = var1 ^ var2;
+		default	: resultc	= 16'd0;
 	endcase
 end
 

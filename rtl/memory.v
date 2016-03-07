@@ -25,7 +25,8 @@ assign	rwdata = {mem[addr1],mem[addr0]};
 
 initial
 begin
-	$readmemb("../scripts/program_8bin.dat", mem);
+	//$readmemb("../scripts/program_8bin.dat", mem);
+	$readmemh("../scripts/program_8hex.dat", mem);
 end
 
 always@(posedge clock)

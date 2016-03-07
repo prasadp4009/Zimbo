@@ -26,7 +26,9 @@ begin
 
 	reset_n = 1;
 
-	#1000;
+	while (zimboinst.opcode != 5'b11111)
+	@(negedge clock);
+	#100 $stop;
 end
 
 endmodule
