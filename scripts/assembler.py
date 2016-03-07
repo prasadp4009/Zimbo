@@ -34,7 +34,7 @@ error = False
 opcode = ["NOP","HLT","LDA","LDD","LDR","LDM","LDI","STR","ADD","ADI","SUB","SUI","MUL","MOD","AND","ORR","XOR","BZR","BEQ","BPV","BNG","JMP"]
 registers = ["R0", "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15"]
 
-decode_op = {"NOP" : "00000","HLT" : "11111","LDA":"0010","LDD":"00011","LDR":"00100","LDM":"00101","LDI":"00110","STR":"00111","ADD":"01000","ADI":"01001","SUB":"01010","SUI":"01011","MUL":"01100","MOD":"01100","AND":"01101","ORR":"01110","XOR":"01111","BZR":"10000","BEQ":"10001","BPV":"10010","BNG":"10011","JMP":"110"}
+decode_op = {"NOP" : "00000","HLT" : "11111","LDA":"00010","LDD":"00011","LDR":"00100","LDM":"00101","LDI":"00110","STR":"00111","ADD":"01000","ADI":"01001","SUB":"01010","SUI":"01011","MUL":"01100","MOD":"01100","AND":"01101","ORR":"01110","XOR":"01111","BZR":"10000","BEQ":"10001","BPV":"10010","BNG":"10011","JMP":"110"}
 decode_reg = {"R0":"0000", "R1":"0001", "R2":"0010", "R3":"0011", "R4":"0100", "R5":"0101", "R6":"0110", "R7":"0111", "R8":"1000", "R9":"1001", "R10":"1010", "R11":"1011", "R12":"1100", "R13":"1101", "R14":"1110", "R15":"1111"}
 
 line_count = 0
@@ -284,25 +284,30 @@ except FileExistsError:
     sys.exit(0)
 
 for val in bin16_code:
-	print("Line_count: ",line_count," Value: ",val)
+	print("Line_count: ",line_count," Value: ",hex(int(val,2))[2:].zfill(4))
 	line_count += 1
 	if hiLO:
 		hexh = str(hex(int(val,2))[2:].zfill(4)) + hexl + "\n"
 		hex32_file.write(hexh)
 		hiLO = False
-		print("In High")
+#		print("In High")
+#		print ("hex_high",hex(int(val,2)),"Actual Val:", val)
 	else:
 		hexl = str(hex(int(val,2))[2:].zfill(4))
+#		print ("hex_low",hex(int(val,2)),"Actual Val:", val)
 		hiLO = True
 
+#	bin_file.write(hex(int(val,2))[2:].zfill(4))
 	byte_file.write(val[-8:])
 	byte_file.write("\n")
 	byte_file.write(val[:8])
 	byte_file.write("\n")
 	byte_file.write("\n")
 
-	byte_array = [int(val[-8:],2),int(val[:8],2)]
+	byte_array = [int(val[-8:], 2),int(val[:8], 2)]
 	bin_file.write(bytes(byte_array))
+#	bin_file.write(bytes(int(val[-8:],2)))
+#	bin_file.write(bytes(int(val[:8],2)))
 #	bin_file.write(str(int(val[:7],2)))
 #	bin_file.write(str(int(val[8:],2)))
 
