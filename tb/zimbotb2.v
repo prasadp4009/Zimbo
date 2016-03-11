@@ -10,6 +10,8 @@ wire	[15:0]	wmdata;
 wire		memwr_en;
 wire	[15:0]	rmdata;
 
+integer count;
+
 zimbotop zimboinst(
 	.clock(clock),
 	.reset_n(reset_n),
@@ -40,6 +42,7 @@ initial
 begin
 	$display("Starting Simulation..!!");
 	reset_n = 0;
+	count = 0;
 
 	repeat(2)
 	@(negedge clock);
@@ -47,7 +50,14 @@ begin
 	reset_n = 1;
 
 	while (zimboinst.opcode != 5'b11111)
-	@(negedge clock);
+	begin
+		count = count + 1;
+		@(negedge clock);
+	end
+
+	$display("\n\n********************************************************************\n\n");
+	$display("* Total number of clocks: %d",count);
+	$display("\n\n********************************************************************\n\n");
 	#100 $stop;
 end
 

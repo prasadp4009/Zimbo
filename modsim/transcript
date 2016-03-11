@@ -871,3 +871,263 @@ run
 # Starting Simulation..!!
 run -all
 # Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 51
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run -all
+# Starting Simulation..!!
+# Break key hit 
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 36
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run -all
+# Break key hit 
+# Simulation stop requested.
+add wave -position insertpoint  \
+sim:/zimbotb2/zimboinst/aluinst/sign
+add wave -position insertpoint  \
+sim:/zimbotb2/zimboinst/aluinst/zero
+add wave -position insertpoint  \
+sim:/zimbotb2/zimboinst/controlinst/sign_flag
+add wave -position insertpoint  \
+sim:/zimbotb2/zimboinst/controlinst/zero_flag
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run -all
+# Starting Simulation..!!
+# Break key hit 
+# Simulation stop requested.
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/wave2.do
+quit -sim
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+do C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/wave2.do
+run
+# Starting Simulation..!!
+run -all
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 51
+quit -sim
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+do C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/wave2.do
+run -all
+# Starting Simulation..!!
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 51
+quit -sim
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v failed with 1 errors.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 1 failed with 1 error. 
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run -all
+# Starting Simulation..!!
+# 
+# 
+# ***************************************************************
+# 
+# 
+# *	Total number of clocks for execution of program:           x
+# 
+# 
+# ***************************************************************
+# 
+# 
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 60
+quit -sim
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run -all
+# Starting Simulation..!!
+# 
+# 
+# ***************************************************************
+# 
+# 
+# *	Total number of clocks for execution of program:        7328
+# 
+# 
+# ***************************************************************
+# 
+# 
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 61
+quit -sim
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(33): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run -all
+# Starting Simulation..!!
+# 
+# 
+# ********************************************************************
+# 
+# 
+# * Total number of clocks:        7328
+# 
+# 
+# ********************************************************************
+# 
+# 
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 61

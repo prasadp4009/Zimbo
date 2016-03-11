@@ -7,19 +7,18 @@ add wave -noupdate -radix binary /zimbotb2/zimboinst/rmdata
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/pcout
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/addrm
 add wave -noupdate -radix binary /zimbotb2/zimboinst/wmdata
-add wave -noupdate -radix unsigned /zimbotb2/zimboinst/wrfdata
+add wave -noupdate -radix hexadecimal /zimbotb2/zimboinst/wrfdata
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/rdata1
-add wave -noupdate -radix unsigned /zimbotb2/zimboinst/rdata2
+add wave -noupdate -radix hexadecimal /zimbotb2/zimboinst/rdata2
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/result
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/var1
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/var2
-add wave -noupdate /zimbotb2/zimboinst/memoryinst/rlatch
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/addr1
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/regfileinst/addr1
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/addr2
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/regfileinst/addr2
 add wave -noupdate /zimbotb2/zimboinst/opcode
-add wave -noupdate /zimbotb2/zimboinst/extdata
+add wave -noupdate -radix binary /zimbotb2/zimboinst/extdata
 add wave -noupdate -radix unsigned -childformat {{{/zimbotb2/zimboinst/func[2]} -radix unsigned} {{/zimbotb2/zimboinst/func[1]} -radix unsigned} {{/zimbotb2/zimboinst/func[0]} -radix unsigned}} -subitemconfig {{/zimbotb2/zimboinst/func[2]} {-height 15 -radix unsigned} {/zimbotb2/zimboinst/func[1]} {-height 15 -radix unsigned} {/zimbotb2/zimboinst/func[0]} {-height 15 -radix unsigned}} /zimbotb2/zimboinst/func
 add wave -noupdate /zimbotb2/zimboinst/pc_en
 add wave -noupdate /zimbotb2/zimboinst/memwr_en
@@ -61,11 +60,15 @@ add wave -noupdate -radix unsigned /zimbotb2/zimboinst/aluinst/notmodzeroH
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/aluinst/notmodzeroL
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/aluinst/notmodzero
 add wave -noupdate -radix unsigned /zimbotb2/zimboinst/aluinst/modHGTmodL
+add wave -noupdate /zimbotb2/zimboinst/aluinst/sign
+add wave -noupdate /zimbotb2/zimboinst/aluinst/zero
+add wave -noupdate /zimbotb2/zimboinst/controlinst/sign_flag
+add wave -noupdate /zimbotb2/zimboinst/controlinst/zero_flag
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {17900 ps} 0}
+WaveRestoreCursors {{Cursor 1} {22683800 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 148
-configure wave -valuecolwidth 100
+configure wave -valuecolwidth 143
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
 configure wave -snapdistance 10
@@ -78,4 +81,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {17900 ps} {146700 ps}
+WaveRestoreZoom {22575400 ps} {22757 ns}

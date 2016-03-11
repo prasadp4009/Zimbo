@@ -49,6 +49,7 @@ wire		insdat;
 wire		immoff;
 wire		jump;
 wire		branch;
+wire		branch_ext;
 wire		mem_alu;
 wire		alusrc;
 wire	[1:0]	addrbase;
@@ -56,7 +57,7 @@ wire	[1:0]	addrbase;
 wire	[2:0]	aluopr;
 wire	[2:0]	alufunc;
 
-wire	[6:0]	offset;
+wire	[10:0]	offset;
 
 pc	pcinst(
 	.clock(clock),
@@ -94,6 +95,7 @@ regfile regfileinst(
 
 signext	signextinst(
 	.immoff(immoff),
+	.branch_ext(branch_ext),
 	.offset(offset),
 	.extdata(extdata)
 );
@@ -132,6 +134,7 @@ control	controlinst(
 	.immoff(immoff),
 	.jump(jump),
 	.branch(branch),
+	.branch_ext(branch_ext),
 	.mem_alu(mem_alu),
 	.alusrc(alusrc),
 	.addrbase(addrbase),

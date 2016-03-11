@@ -160,6 +160,7 @@ if not error:
 #			print("\t\tLine number = ",linenum)
 '''
 print(data_loc)
+print(loop_loc)
 assm16_code = code + data
 
 line_count = 0

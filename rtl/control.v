@@ -21,6 +21,7 @@ module control(
 	output		immoff,
 	output		jump,
 	output		branch,
+	output		branch_ext,
 	output		mem_alu,
 	output		alusrc,
 	output	[1:0]	addrbase,
@@ -123,7 +124,7 @@ assign FUN = func[0];
 assign new_opcode = cycle ? opcode_latch : opcode;
 assign mulreg = (new_opcode == MUL) & (~FUN) ? (cycle ? (~rdestBit0) : rdestBit0) : rdestBit0; 
 assign {pc_en,insdat,memwr_en,regwr_en,immoff,jump,branch,mem_alu,alusrc,addrbase,num_of_cycles,aluopr,alufunc} = update;
-
+assign branch_ext = (opcode[4:3] == 2'b10);
 always@(posedge clock or negedge reset_n)
 begin
 	if(~reset_n)

@@ -27,7 +27,7 @@ module datapath(
 	output	[15:0]	var2,
 	output	[4:0]	opcode,
 	output	[2:0]	func,
-	output	[6:0]	offset
+	output	[10:0]	offset
 );
 
 localparam	R0 = 4'd0;
@@ -49,7 +49,7 @@ assign var1	= rdata1;
 assign var2	= alusrc ? rdata2 : extdata;
 assign opcode	= rmdata_out[15:11];
 assign func	= rmdata_out[2:0];
-assign offset	= rmdata_out[6:0];
+assign offset	= rmdata_out[10:0];
 assign rdestBit0= rmdata_out[7];
 
 always@(posedge clock)
