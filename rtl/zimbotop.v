@@ -1,6 +1,12 @@
 module zimbotop(
-	input	clock,
-	input	reset_n
+	input		clock,
+	input		reset_n,
+
+	output	[15:0]	addrm,
+	output	[15:0]	wmdata,
+
+	output		memwr_en,
+	input	[15:0]	rmdata
 );
 
 wire	[15:0]	pcin;
@@ -8,10 +14,10 @@ wire	[15:0]	pcout;
 wire	[15:0]	pcbranch;
 wire	[15:0]	pcjump;
 wire	[15:0]	extdata;
-wire	[15:0]	addrm;
-wire	[15:0]	wmdata;
-wire	[15:0]	rmdata;
-wire	[15:0]	rwdata;
+//wire	[15:0]	addrm;
+//wire	[15:0]	wmdata;
+//wire	[15:0]	rmdata;
+//wire	[15:0]	rwdata;
 wire	[15:0]	wrfdata;
 wire	[15:0]	rdata1;
 wire	[15:0]	rdata2;
@@ -33,7 +39,7 @@ wire		zero_f;
 wire		step_exe;
 
 wire		pc_en;
-wire		memwr_en;
+//wire		memwr_en;
 wire		memrd_en;
 wire		regwr_en;
 wire		mulreg;
@@ -64,6 +70,7 @@ pc	pcinst(
 	.pcout(pcout)
 );
 
+/*
 memory memoryinst(
 	.clock(clock),
 	.addrm(addrm),
@@ -74,7 +81,7 @@ memory memoryinst(
 	.rwdata(rwdata),
 	.rmdata(rmdata)
 );
-
+*/
 regfile regfileinst(
 	.clock(clock),
 	.addr1(addr1),
@@ -133,10 +140,11 @@ control	controlinst(
 );
 
 datapath dpinst(
+		.clock(clock),
 		.pcout(pcout),
 		.extdata(extdata),
 		.rmdata(rmdata),	
-		.rwdata(rwdata),	
+//		.rwdata(rwdata),	
 		.result(result),
 		.rdata1(rdata1),
 		.rdata2(rdata2),

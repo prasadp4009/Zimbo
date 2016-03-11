@@ -287,9 +287,14 @@ hex8_filename = file_name + "_8hex.dat"
 byte_filename = file_name + "_8bin.dat"
 bin_filename = file_name + "_bin.hex"
 
+byte_filename0 = file_name + "_8bin0.dat"
+byte_filename1 = file_name + "_8bin1.dat"
+
 silentremove(hex_filename)
 silentremove(hex8_filename)
 silentremove(byte_filename)
+silentremove(byte_filename0)
+silentremove(byte_filename1)
 silentremove(bin_filename)
 
 try:
@@ -308,6 +313,18 @@ try:
     byte_file  = open(byte_filename, 'w')
 except FileExistsError:
     print ("ERROR: File already exists ", byte_filename)
+    sys.exit(0)
+
+try:
+    byte_file0  = open(byte_filename0, 'w')
+except FileExistsError:
+    print ("ERROR: File already exists ", byte_filename0)
+    sys.exit(0)
+
+try:
+    byte_file1  = open(byte_filename1, 'w')
+except FileExistsError:
+    print ("ERROR: File already exists ", byte_filename1)
     sys.exit(0)
 
 try:
@@ -340,6 +357,10 @@ for val in bin16_code:
 	byte_file.write(val[:8])
 	byte_file.write("\n")
 #	byte_file.write("\n")
+	byte_file0.write(val[-8:])
+	byte_file0.write("\n")
+	byte_file1.write(val[:8])
+	byte_file1.write("\n")
 
 	byte_array = [int(val[-8:], 2),int(val[:8], 2)]
 	bin_file.write(bytes(byte_array))
@@ -351,6 +372,8 @@ for val in bin16_code:
 hex32_file.close()
 hex8_file.close()
 byte_file.close()
+byte_file0.close()
+byte_file1.close()
 bin_file.close()
 print ("+_+_+_+_+_All Operations are Completed_+_+_+_+_+")
 

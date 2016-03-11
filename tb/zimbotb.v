@@ -4,11 +4,31 @@ module zimbotb;
 reg clock;
 reg reset_n;
 
+wire	[15:0]	addrm;
+wire	[15:0]	wmdata;
+
+wire		memwr_en;
+wire	[15:0]	rmdata;
+
 zimbotop zimboinst(
 	.clock(clock),
-	.reset_n(reset_n)
+	.reset_n(reset_n),
+	.addrm(addrm),
+	.wmdata(wmdata),
+	.memwr_en(memwr_en),
+	.rmdata(rmdata)
 );
 
+mem_top meminit(
+	.clock(clock),
+	.addrm(addrm),
+
+	.wmdata(wmdata),
+	.we(memwr_en),
+
+	.rmdata(rmdata)
+
+);
 initial
 begin
 	clock = 0;

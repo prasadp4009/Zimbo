@@ -1,8 +1,9 @@
 module datapath(
+	input		clock,
 	input	[15:0]	pcout,
 	input	[15:0]	extdata,
 	input	[15:0]	rmdata,	
-	input	[15:0]	rwdata,	
+//	input	[15:0]	rwdata,	
 	input	[15:0]	result,
 	input	[15:0]	rdata1,
 	input	[15:0]	rdata2,
@@ -31,27 +32,37 @@ module datapath(
 
 localparam	R0 = 4'd0;
 
+wire [15:0]	rmdata_out;
+reg  [15:0]	rlatch;
+
+assign	rmdata_out = mem_alu ? rlatch : rmdata;
+
 assign pcin 	= pcout + 16'd2;
-assign pcjump 	= {pcout[15:14],{rmdata[12:0],1'b0}};
+assign pcjump 	= {pcout[15:14],{rmdata_out[12:0],1'b0}};
 assign pcbranch = pcout + extdata;
-assign wrfdata	= mem_alu ? rwdata : result;
+assign wrfdata	= mem_alu ? rmdata : result;
 //assign addr1	= addrbase ? rmdata[6:3] : R0;
-assign addr2	= {rmdata[10:8],mulreg};
+assign addr2	= {rmdata_out[10:8],mulreg};
 assign addrm	= insdat ? result : pcout;
 assign wmdata	= rdata2;
 assign var1	= rdata1;
 assign var2	= alusrc ? rdata2 : extdata;
-assign opcode	= rmdata[15:11];
-assign func	= rmdata[2:0];
-assign offset	= rmdata[6:0];
-assign rdestBit0= rmdata[7];
+assign opcode	= rmdata_out[15:11];
+assign func	= rmdata_out[2:0];
+assign offset	= rmdata_out[6:0];
+assign rdestBit0= rmdata_out[7];
+
+always@(posedge clock)
+begin
+	rlatch <= rmdata;
+end
 
 always@(*)
 	case(addrbase)
 		2'd0: addr1 = R0;
-		2'd1: addr1 = rmdata[6:3];
+		2'd1: addr1 = rmdata_out[6:3];
 		2'd2: addr1 = addr2;
-		2'd3: addr1 = rmdata[6:3];
+		2'd3: addr1 = rmdata_out[6:3];
 	endcase
 
 endmodule
