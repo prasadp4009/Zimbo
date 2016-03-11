@@ -39,7 +39,7 @@ localparam	PAS1	= 3'b001,
 
 localparam	NOP	= 5'b00000,
 		HLT	= 5'b11111,
-		
+		STA	= 5'b00001,
 		LDA	= 5'b00010,	//Load at Address directly
 		LDD	= 5'b00011,
 		LDR	= 5'b00100,
@@ -168,6 +168,10 @@ begin
 			CY2: update = {EPC,DAT,MRD,WRF,OFF,NJP,NBR,PSM,SIM,RG0,CY1,AOFF,FUN1};
 		     endcase
 		LDI: update = {EPC,INS,MRD,WRF,IMM,NJP,NBR,PSA,SIM,RGA,CY1,PAS2,FUN1};
+		STA: case(cycle)
+			CY1: update = {DPC,INS,MRD,RRF,OFF,NJP,NBR,PSA,SIM,RGA,CY2,PAS1,FUN1};
+			CY2: update = {EPC,DAT,MWR,RRF,OFF,NJP,NBR,PSM,SIM,RGA,CY1,PAS1,FUN1};
+		     endcase
 		STR: case(cycle)
 			CY1: update = {DPC,INS,MRD,RRF,OFF,NJP,NBR,PSA,SIM,RG0,CY2,AOFF,FUN1};
 			CY2: update = {EPC,DAT,MWR,RRF,OFF,NJP,NBR,PSM,SIM,RG0,CY1,AOFF,FUN1};

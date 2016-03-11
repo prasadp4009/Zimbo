@@ -1,0 +1,873 @@
+# Compile of alu.v was successful.
+# Compile of control.v was successful with warnings.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+# Compile of alu.v was successful.
+# Compile of control.v was successful with warnings.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+# Compile of alu.v was successful.
+# Compile of control.v was successful.
+# Compile of datapath.v was successful.
+# Compile of memory.v was successful.
+# Compile of pc.v was successful.
+# Compile of regfile.v was successful.
+# Compile of signext.v was successful.
+# Compile of zimbotop.v was successful.
+# Compile of zimbotb.v was successful.
+# Compile of mem_bank0.v was successful.
+# Compile of mem_bank1.v was successful.
+# Compile of mem_top.v was successful.
+# Compile of zimbotb2.v was successful.
+# 13 compiles, 0 failed with no errors. 
+vsim -novopt work.zimbotb2
+# vsim -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+do C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/wave.do
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/clock'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 3
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/reset_n'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 4
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcin'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 5
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/rmdata'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 6
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcout'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 7
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/addrm'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 8
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/wmdata'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 9
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/wrfdata'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 10
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/rdata1'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 11
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/rdata2'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 12
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/result'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 13
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/var1'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 14
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/var2'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 15
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/memoryinst/rlatch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 16
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/addr1'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 17
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/regfileinst/addr1'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 18
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/addr2'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 19
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/regfileinst/addr2'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 20
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/opcode'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 21
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/extdata'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 22
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/func'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 23
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pc_en'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 24
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/memwr_en'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 25
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/memrd_en'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 26
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/regwr_en'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 27
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/mulreg'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 28
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/cycle'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 29
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/insdat'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 30
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/immoff'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 31
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/mem_alu'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 32
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/alusrc'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 33
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/addrbase'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 34
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluopr'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 35
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/alufunc'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 36
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/offset'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 37
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/clock'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 38
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/reset_n'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 39
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/en'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 40
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/branch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 41
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/jump'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 42
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pcin'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 43
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pcbranch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 44
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pcjump'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 45
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pcout'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 46
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pc1'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 47
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/pcinst/pc2'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 48
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/controlinst/update'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 49
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/controlinst/new_opcode'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 50
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/controlinst/opcode_latch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 51
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/mulreg'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 52
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/mul'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 53
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/mul_latch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 54
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/mod_latch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 55
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/mod_temp'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 56
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/modSub'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 57
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/resultc'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 58
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/modHLsubsel'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 59
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/notmodzeroH'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 60
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/notmodzeroL'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 61
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/notmodzero'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 62
+# ** Error: (vish-4014) No objects found matching '/zimbotb/zimboinst/aluinst/modHGTmodL'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave.do line 63
+do C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/wave2.do
+# ** Error: (vish-4014) No objects found matching '/zimbotb2/zimboinst/memoryinst/rlatch'.
+# Executing ONERROR command at macro C:\Users\Dadu\OneDrive\Courses\ECE586_CompArch_Teuscher\Final_Project\src\modsim\wave2.do line 16
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run -all
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 51
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Warning: (vsim-3017) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v(31): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+run
+# Starting Simulation..!!
+run -all
+# Break in Module zimbotb2 at C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/tb/zimbotb2.v line 51

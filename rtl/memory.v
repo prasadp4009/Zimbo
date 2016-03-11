@@ -4,24 +4,24 @@ module memory(
 
 	input	[15:0]	wmdata,
 	input		mem_alu,
-	input		re,
+//	input		re,
 	input		we,
 
-	output	[15:0]	rwdata,
+//	output	[15:0]	rwdata,
 	output	[15:0]	rmdata
 );
 
 wire [15:0] addr0;
 wire [15:0] addr1;
 
-reg [15:0] rlatch;
+//reg [15:0] rlatch;
 reg [7:0] mem [0:65535];
 
 assign addr0 = addrm;
 assign addr1 = {addrm[15:1],1'b1};
 
-assign	rmdata = mem_alu ? rlatch : {mem[addr1],mem[addr0]};
-assign	rwdata = {mem[addr1],mem[addr0]};
+assign	rmdata = {mem[addr1],mem[addr0]};//mem_alu ? rlatch : {mem[addr1],mem[addr0]};
+//assign	rwdata = {mem[addr1],mem[addr0]};
 
 initial
 begin
@@ -38,8 +38,8 @@ begin
 	end
 end
 
-always@(posedge clock)
-begin
-	rlatch <= rmdata;
-end
+//always@(posedge clock)
+//begin
+//	rlatch <= rmdata;
+//end
 endmodule
