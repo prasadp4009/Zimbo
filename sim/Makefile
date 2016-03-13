@@ -21,7 +21,7 @@ run_sim:
 	vsim $(VSIMBATCH) $(VSIMOPT) -l zimbotest.log
 
 run_gui:
-	vsim $(VSIMGUI) $(VSIMOPT) -l calc1test.log
+	vsim $(VSIMGUI) $(VSIMOPT) -l zimbotest.log
 
 run_testg:
 	vsim -novopt work.zimbotb

@@ -64,6 +64,19 @@ add wave -noupdate /zimbotb2/zimboinst/aluinst/sign
 add wave -noupdate /zimbotb2/zimboinst/aluinst/zero
 add wave -noupdate /zimbotb2/zimboinst/controlinst/sign_flag
 add wave -noupdate /zimbotb2/zimboinst/controlinst/zero_flag
+add wave -noupdate -radix hexadecimal /zimbotb2/addrm_cpu
+add wave -noupdate -radix hexadecimal /zimbotb2/wmdata_cpu
+add wave -noupdate -radix hexadecimal /zimbotb2/memwr_en_cpu
+add wave -noupdate -radix hexadecimal /zimbotb2/rmdata_cpu
+add wave -noupdate -radix hexadecimal /zimbotb2/addrm_tb
+add wave -noupdate -radix hexadecimal /zimbotb2/wmdata_tb
+add wave -noupdate -radix hexadecimal /zimbotb2/memwr_en_tb
+add wave -noupdate -radix hexadecimal /zimbotb2/rmdata_tb
+add wave -noupdate -radix hexadecimal /zimbotb2/addrm_mem
+add wave -noupdate -radix hexadecimal /zimbotb2/wmdata_mem
+add wave -noupdate -radix hexadecimal /zimbotb2/memwr_en_mem
+add wave -noupdate -radix hexadecimal /zimbotb2/rmdata_mem
+add wave -noupdate -radix hexadecimal /zimbotb2/tbcpu
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {22683800 ps} 0}
 quietly wave cursor active 1
@@ -81,4 +94,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {22575400 ps} {22757 ns}
+WaveRestoreZoom {0 ps} {609 ns}

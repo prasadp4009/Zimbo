@@ -1,0 +1,170 @@
+# vsim -l zimbotb.log -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) ../tb/zimbotb2.v(58): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) ../tb/zimbotb2.v(58): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+# Starting Simulation..!!
+# 
+# 
+# ********************************************************************
+# * Total number of clocks:        7328
+# * Encrypted data written in file result.txt
+# ********************************************************************
+# 
+# 
+# Break in Module zimbotb2 at ../tb/zimbotb2.v line 104
+# Simulation Breakpoint: Break in Module zimbotb2 at ../tb/zimbotb2.v line 104
+# MACRO ./run.do PAUSED at line 6
+quit -sim
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/zimbo.mpf
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# -- Compiling module control
+# -- Compiling module datapath
+# -- Compiling module mem_bank0
+# -- Compiling module mem_bank1
+# -- Compiling module mem_top
+# -- Compiling module memory
+# -- Compiling module pc
+# -- Compiling module regfile
+# -- Compiling module signext
+# -- Compiling module zimbotop
+# -- Compiling module zimbotb
+# -- Compiling module zimbotb2
+# 
+# Top level modules:
+# 	zimbotb
+# 	zimbotb2
+# vsim -l zimbotb.log -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) ../tb/zimbotb2.v(58): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) ../tb/zimbotb2.v(58): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+# ** Error: (vsim-PLI-3947) ../tb/zimbotb2.v(102): $fwrite : Invalid format specifier '-'.
+# 
+#         Region: /zimbotb2
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./run.do PAUSED at line 4
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/zimbo.mpf
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# -- Compiling module control
+# -- Compiling module datapath
+# -- Compiling module mem_bank0
+# -- Compiling module mem_bank1
+# -- Compiling module mem_top
+# -- Compiling module memory
+# -- Compiling module pc
+# -- Compiling module regfile
+# -- Compiling module signext
+# -- Compiling module zimbotop
+# -- Compiling module zimbotb
+# -- Compiling module zimbotb2
+# 
+# Top level modules:
+# 	zimbotb
+# 	zimbotb2
+# vsim -l zimbotb.log -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) ../tb/zimbotb2.v(58): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) ../tb/zimbotb2.v(58): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+# Starting Simulation..!!
+# 
+# 
+# ********************************************************************
+# * Total number of clocks:        7328
+# * Encrypted data written in file result.txt
+# ********************************************************************
+# 
+# 
+# Break in Module zimbotb2 at ../tb/zimbotb2.v line 118
+# Simulation Breakpoint: Break in Module zimbotb2 at ../tb/zimbotb2.v line 118
+# MACRO ./run.do PAUSED at line 6
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying C:/Users/Dadu/OneDrive/Courses/ECE586_CompArch_Teuscher/Final_Project/src/modsim/zimbo.mpf
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# -- Compiling module control
+# -- Compiling module datapath
+# -- Compiling module mem_bank0
+# -- Compiling module mem_bank1
+# -- Compiling module mem_top
+# -- Compiling module memory
+# -- Compiling module pc
+# -- Compiling module regfile
+# -- Compiling module signext
+# -- Compiling module zimbotop
+# -- Compiling module zimbotb
+# -- Compiling module zimbotb2
+# 
+# Top level modules:
+# 	zimbotb
+# 	zimbotb2
+# vsim -l zimbotb.log -novopt work.zimbotb2 
+# Loading work.zimbotb2
+# Loading work.zimbotop
+# Loading work.pc
+# Loading work.regfile
+# Loading work.signext
+# Loading work.alu
+# Loading work.control
+# Loading work.datapath
+# Loading work.memory
+# ** Warning: (vsim-3017) ../tb/zimbotb2.v(58): [TFMPC] - Too few port connections. Expected 6, found 5.
+# 
+#         Region: /zimbotb2/meminit
+# ** Warning: (vsim-3722) ../tb/zimbotb2.v(58): [TFMPC] - Missing connection for port 'mem_alu'.
+# 
+# Starting Simulation..!!
+# 
+# 
+# ********************************************************************
+# * Total number of clocks:        7328
+# * Encrypted data written in file result.txt
+# ********************************************************************
+# 
+# 
+# Break in Module zimbotb2 at ../tb/zimbotb2.v line 118
+# Simulation Breakpoint: Break in Module zimbotb2 at ../tb/zimbotb2.v line 118
+# MACRO ./run.do PAUSED at line 6

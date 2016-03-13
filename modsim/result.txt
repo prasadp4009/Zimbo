@@ -1,0 +1,37 @@
+*******************************************************
+* Total Clock Cycles for Execution: 7328 
+*******************************************************
+
+ Encrypted Data:
+   0: 627bbcdc
+   1: be7bd9ac
+   2: 627bbcdc
+   3: be7bd9ac
+   4: 627bbcdc
+   5: be7bd9ac
+   6: 627bbcdc
+   7: be7bd9ac
+   8: 627bbcdc
+   9: be7bd9ac
+  10: 627bbcdc
+  11: be7bd9ac
+  12: 627bbcdc
+  13: be7bd9ac
+  14: 627bbcdc
+  15: be7bd9ac
+  16: 627bbcdc
+  17: be7bd9ac
+  18: 627bbcdc
+  19: be7bd9ac
+  20: 627bbcdc
+  21: be7bd9ac
+  22: 627bbcdc
+  23: be7bd9ac
+  24: 627bbcdc
+  25: be7bd9ac
+  26: 627bbcdc
+  27: be7bd9ac
+  28: 627bbcdc
+  29: be7bd9ac
+  30: 627bbcdc
+  31: be7bd9ac

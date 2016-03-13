@@ -88,7 +88,35 @@ for line in file.readlines():
 			error = True
 			break
 	elif datafound:
-		if ":" and "range" in line.rstrip('\n'):
+		if ":" and "$" in line.strip('\n'):
+			fname = line[line.find("(")+1:line.find(")")]
+			try:
+    				datafile = open(fname,'r')
+			except FileNotFoundError:
+    				print ("ERROR: There was error in reading file ", fname)
+    				sys.exit(0)
+			point = (re.sub(r'[\s+]', "", line.split(':')[0]))
+			data_loc[point] = line_count * 2
+			isfirst = True
+			for hexdata in datafile.readlines():
+				if hexdata.strip() is not "" and all(c in string.hexdigits for c in hexdata.strip()):
+					if isfirst:
+						line_count = line_count + 2
+						first_join = point + ":" + "0x" + hexdata.strip()[-4:]
+						data.append(first_join)
+						data.append("0x"+ hexdata.strip()[:4])
+						isfirst = False
+					else:
+						line_count = line_count + 2
+						data.append("0x" + hexdata.strip()[-4:])
+						data.append("0x" + hexdata.strip()[:4])
+				else:
+					print ("Invalid hex data entry ",hexdata," in ", fname)
+					datafile.close()
+					sys.exit(0)
+
+			datafile.close()
+		elif ":" and "range" in line.rstrip('\n'):
 			depth = line[line.find("(")+1:line.find(")")]
 			deep = int(re.search(r'\d+', depth).group())#filter(str.isdigit, depth))
 			point = (re.sub(r'[\s+]', "", line.split(':')[0]))
@@ -251,7 +279,7 @@ for line in assm16_code:
 				else:
 					print("Error:OP = ",length,"(2) Invalid Hex digit ", hexdat," at line: ",line_count + 1)
 					sys.exit(0)
-			elif syntax[0] != "HLT":
+			elif syntax[0] != "HLT" or syntax[0] != "NOP" :
 				if data_loc[syntax[0]] is not None:
 					output =  (bin(data_loc[syntax[0]])[2:]).zfill(16)
 				else:
@@ -259,6 +287,8 @@ for line in assm16_code:
 					sys.exit(0)
 
 			elif syntax[0] == "HLT" and decode_op[syntax[0]] is not None:
+				output =  decode_op.get(syntax[0]) + "00000000000"
+			elif syntax[0] == "NOP" and decode_op[syntax[0]] is not None:
 				output =  decode_op.get(syntax[0]) + "00000000000"
 			else:
 				print("Error:OP = ",length," Invalid data or pointer value",syntax[0]," at line: ",line_count + 1)
